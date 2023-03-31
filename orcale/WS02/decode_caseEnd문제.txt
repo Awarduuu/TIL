@@ -1,0 +1,14 @@
+
+ EX) EMP테이블에서 DEPNO가 10 이면 관리부, 20이면 총무부, 30이면 영업부 
+     이외의 값은 기타부 로 출력하고 컬럼명은 부서명 으로 한다.
+     (DECODE, CASE END)
+
+ex)job이 manager인 경우 sal*0.1, ANALYST 인경우는   sal *0.2
+     SALESMAN인 경우는 sal * 0.3을 구해서 성과급 필드를 만든다.
+      (case end, decode 다 해본다) 
+
+
+ex) sal이 2000이하이면 '저소득층'
+      sal이 2001 ~ 4000사이면 '중산층'
+      sal이 4001 이상이면 '고소득층'  구하여 등급 별칭 해준다.
+      (case end) 

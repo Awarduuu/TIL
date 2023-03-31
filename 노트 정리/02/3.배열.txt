@@ -1,0 +1,156 @@
+- Array = 배열
+   : 하나의 이름으로 방을 나눠서(index) 여러개의 값을 저장 할수 있다.
+   : 한가지 타입만 저장가능
+   : 객체이다 (반드시 생성해서 사용한다): new 사용
+   : 배열의 길이는 배열이름. length
+   : 배열의 index는 0부터 시작한다.
+
+    * 배열 생성방법
+       데이터타입 [ ] 배열이름 = new 데이터타입 [개수]; 
+       데이터타입  배열이름 [ ] = new 데이터타입 [개수]; 
+       데이터타입  배열이름 [ ] = new 데이터타입 [ ]{값, 값,값,....}; 
+       데이터타입  배열이름 [ ] = {값, 값,값,....}; 
+	
+	int [] arr = new int [5];
+	
+	* 데이터의 0에 준하는 초기 값
+	정수형 =0 
+ 	실수형 =0.0
+	논리형 = false
+	문자형 = \u0000 = 공백 
+	Object type = 참조형 = reference type ===> null
+	ex) String a의 초기 값은 null 
+	
+
+      ex) 정수형 5개 저장하는 배열
+          int [ ] arr = new int [5]; 
+
+
+      ex) 정수형 5개 저장하는 배열을 선언과 동시에 명시적 초기화
+           int [] arr = new int []{2,4,6,8,10}; 
+
+============================================
+
+    class Test {  } 존재한다 가정하에....
+ 
+
+     int i; //변수
+
+    String s;
+    Test t ;
+     int arr [ ] ; //배열
+
+    System.out.println( i );//0
+
+    System.out.println( s);//null
+     System.out.println( t );//null
+    System.out.println( arr );// null
+
+     i=10;
+     s="안녕";
+
+     t = new Test();
+     arr = new int [5];
+    
+    System.out.println( i );//10
+     System.out.println( s);//안녕
+     System.out.println( t );// 주소
+     System.out.println( arr );//주소
+
+* 배열에서 자주 발생하는 Exception (예외)
+    : 컴파일은 성공하는 실행도중에 발생한다.
+    1) ArrayIndexOutofBoundsException 
+
+    2) NullPointerException
+------------------------------------------------------------------------
+   class Test{
+     int a;
+     public void aa(){
+
+    }
+  }
+==============================================================
+  
+ ex)
+    String names [] = new String [24];
+    int ages [] = new int [24];
+    String addrs [] = new String [24];
+
+   names[0]="장희정";
+   ages[0]=20;
+   addrs[3]="성남";
+
+
+   //VO=Value Object  , DTO = Data Transfer Object , Domain
+   class Student{
+        String name;
+        int age;
+        String addr;
+
+  }
+
+   Student st = new Student();// 한명의 학생
+   st.name="장희정";
+   st.age=20;
+   st.addr="서울";
+
+  * 24명을 저장하는 Student타입의 배열을 만든
+    Student [] stArr = new Student [24];
+   stArr[0] = new Student();
+  stArr[1] = new Student();
+  ...
+  stArr[23] = new Student();
+
+  stArr[0].name="나영";
+  stArr[0].age=20;
+  stArr[0].addr="서울";
+  
+  
+  - 2차원 배열
+   datatype 배열이름 [ ][ ] = new datatype [행][열];
+   datatype [ ][ ] 배열이름  = new datatype [행][열];
+   datatype [ ] 배열이름 [ ]   = new datatype [행][열];
+
+  datatype 배열이름 [ ][ ] =new datatype [ ][ ]{ 
+      {값, 값,...}, 
+      {값, 값,...}, 
+      ...
+   };
+
+  datatype 배열이름 [ ][ ] ={ 
+      {값, 값,...}, 
+      {값, 값,...}, 
+      ...
+   };
+
+  ex)
+    int [][] arr = new int [3][5];
+
+ ex) int [][] arr = new int [][] {
+        {1 ,3, 5, 7 ,9},
+        {2 ,4, 6, 8, 10},
+        {10,20,30,40,50},
+  };
+=========================================
+  * 가변형 2차원 배열
+     : 각 행마다 열의 개수를 다르게 만들수 있다.(배열의 공간을 좀더 효율적으로 관리)
+
+    - 선언방법
+      데이터타입 [][] 배열이름 = new 데이터타입 [행][ ]; //행은 생략할수 없고 열을 비워둔다.
+
+      * 각 행마다 열을 생성한다.(1차원배열)
+        
+     ex) int [] [] arr =new int [3][ ];
+          arr[0] = new int [5];
+          arr[1] = new int [2];
+          arr[2] = new int [3];
+
+
+  ex) 2차원 가변형 배열을 선언과 동시에 명시적초기화
+      int [][] arr = new int [][]{
+          {1,3,5},
+          {2,4,6,8,10},
+          {1,2,3,4,5,6,7,8},
+          {9,6},
+    };
+

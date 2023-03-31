@@ -1,0 +1,49 @@
+1.Constructor란?
+  ① 특별한 method이다.
+  ② 반드시 method이름이 class이름과 같다. (method이름이 대문자로 시작) 
+  ③ 일반적인 method선언과 같지만 returnType 자리가 없다. 
+       ⇨ modifier class이름( [ dataType 변수이름, ... ] ){ } 
+  ④ 객체가 생성(new)되는 시점에 딱 한번 호출한다. 
+  ⑤ java의 모든 객체는 반드시 한 개 이상의 생성자를 갖는다. 
+  ⑥ Overloading이 가능하다. 
+  ⑦ 프로그래머가 생성자를 하나도 작성하지 않으면 default 생성자가 만들어진다. 
+     ⇨ modifier class이름( ){ }
+
+     
+  2. 객체 생성되는 시점에 하는 일
+  ㉠ 전역변수를 0에 준하는 값으로 초기화 ex) int i; ⇨ 0 
+  ㉡ 전역변수를 명시적 초기화 (프로그래머가 직접 값을 입력) ex) int i=5; 
+  ㉢ 생성자 구현부 실행   
+  
+  3. 같은 class내에서 다른 생성자 호출 방법
+     this([값, 값, ... ]); ⇨ 반드시 생성자 구현부 첫 번째 줄에서만 가능
+     
+ 
+ =====================================================================================    
+  * 싱글톤 클래스 만들기
+   1) private 생서자를 만든다.
+   2) 현재 객체에서 직접 객체를 생성해서 리턴해주는 메소드는 작성한다(static메소드)
+   3) 맴버필드에서 현재객체를 생성하는 static 맴버를 만들고 2)메소드에서 리턴해준다. 
+   
+      
+ class Test{
+    private static Test t  = new Test();
+     //외부에서 객체생성 막는다.
+     private Test(){  //현재클래스내에서 접근가능!!
+
+      } 
+      //현재 객체를 직접생성해서 리턴해준다.
+      public static Test getInstance( ){
+           return t;
+     }
+ }
+-------------------------------------
+  new Test(); //외부에서 생성안됨!!
+
+   Test  t1 = Test.getInstance( ); //제공된 형태대로 Test객체를 사용할수 있다.
+   Test  t2 = Test.getInstance( ); 
+   Test  t3 = Test.getInstance( ); 
+
+ 
+
+     

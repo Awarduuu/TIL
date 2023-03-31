@@ -1,0 +1,23 @@
+-static
+  1) class 앞에
+  class 앞에는 올 수 없다. (단, Inner class에는 사용가능) 
+    ex) static class Test{ } ⇨ X 
+  
+  2) 메소드 앞에
+     ㉠ 전역변수 앞에만 사용가능 ex) static int i; 
+     ㉡ 객체생성 없이 외부에서 class이름.변수이름 호출가능
+     ㉢ static변수는 같은 class들이 공유하는 공유변수이다
+  
+  3) 변수 앞에
+     ㉠ 객체생성 없이 class이름.mehtod이름( [값,값,…] ); 호출가능
+     ㉡ static method는 일반(static이 없는) method 호출 안됨. 
+     ㉢ static method는 static method만 호출 가능. 
+     ㉣ static method안에서 this 키워드 사용 안됨. 
+          ⇨ 같은 class 내에 static method 호출할 때 => method이름( [값, ... ] ); 
+          
+  4) static 블럭
+    ex) static{
+           기능 구현 ;
+        }
+       ⇨ class 내부에 선언되어 main method보다 먼저 실행된다.
+       ⇨ method, 생성자 등의 영역 안에서는 선언 될 수 없다

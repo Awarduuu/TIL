@@ -1,0 +1,8 @@
+ - Overloading
+ ① 하나의 class 내부에 method이름이 같은 method 여러 개 있는 것
+ ② 하나의 method이름을 가지고 기능을 다르게 구현하는 것 ⇨ 이용자 편의
+ ③ 작성규칙
+   ▪ modifier(접근제한자) 같아도 달라도 상관없음. 
+   ▪ returnType 같아도 달라도 상관없음. 
+   ▪ method이름 반드시 같아야 한다. 
+   ▪ 단, 인수는 무조건 인수의 순서 or Type or 개수가(셋 중하나가) 달라야 한다. 

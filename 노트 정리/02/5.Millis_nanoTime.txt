@@ -1,0 +1,34 @@
+System.currentTimeMillis() vs System.nanoTime()
+   
+    - System.currentTimeMillis()
+       현재 시간과 UTC(협정세계시)인 1970년 1월 1일 자정과의 차이로 밀리세컨드(1/1000초) 값을 반환
+	날짜와 날짜 사이의 gap을 구할 때        
+
+       long curLong = System.currentTimeMillis();        
+       System.out.println(curLong);
+ 
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss"); // HH 24시간  hh 12시간
+		String curTime = sdf.format(new Date(curLong));
+ 
+		System.out.println(curTime);
+		Thread.sleep(5000);
+		long endLong = System.currentTimeMillis();
+ 
+        System.out.println((endLong - curLong)/1000 + "초 걸림");  // 밀리초라 천분의 1로
+
+
+       - System.nanoTime() // 10억분의 1초 
+	우리가 만든 프로그램의 실행 속도를 구할 때 사용 
+          메서드는 *현재 시간(시스템 시간)과 관계가 없음*
+          작동중인 JVM의 정밀한 시간 소스의 현재 값을 long타입으로 나노세컨드(1/1_000_000_000초)를 반환
+          현재 시간을 측정하기 위해서 사용하면 안됨
+          그리고 분산 시스템에서 다른 JVM끼리 시간 측정을 위해 사용하면 안됨
+
+          JVM마다 측정하기 위한 기준값이 다르기에 절대값이 될 수 없음
+          즉, 서버간 데이터 전송 시간을 측정하기 위해 사용하면 안 됨.
+ 
+ 
+     * 결론은 시스템의 시간을 사용하기 위해서나 오늘 날짜를 알아내기 위해서는 
+        System.currentTimeMillis()를 사용하면 되고
+       개발한 프로그램의 성능 측정을 위해 나노초로 정밀하게 구간 시간 측정을 위해서는 
+       System.nanoTime() 사용하면 됩니다.
