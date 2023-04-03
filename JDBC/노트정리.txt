@@ -1,0 +1,13 @@
+- JDBC API
+: java와 DB를 연동
+
+- 단계
+1) 로드 : 
+연동하려는 DB제품(벤더)을 선택하는 것, 제품별 Driver가 필요하다.(~.jar)
+만약 Driver를 못찾으면 ClassNotFoundException 발생
+
+2) 연결 : 로드된 DB에 접속하는 것으로 URL, ID, Password를 이용해서 연결객체를 얻어오는 과정이다.
+
+3) 실행 : CRUD 작업을 실행한다.
+
+4) 닫기 : 사용된 객체를 반납한다.
