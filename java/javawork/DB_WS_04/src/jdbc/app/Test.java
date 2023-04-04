@@ -9,7 +9,7 @@ import jdbc.dao.UserDAOimpl;
 import jdbc.dto.UserDto;
 
 public class Test {
-
+	static UserDAOimpl userDAOimpl = new UserDAOimpl();
 	public static void main(String[] args) {
 		
        
@@ -39,7 +39,7 @@ public class Test {
 		userDto.setSleep(false);
 		
 	//  dao호출하고 그결과에 따라 출력한다.
-		UserDAOimpl userDAOimpl = new UserDAOimpl();
+		
 		if(userDAOimpl.insert(userDto)>0) {
 			System.out.println("******* 입력 ********");
 			System.out.println(userDto);
@@ -55,7 +55,6 @@ public class Test {
 		userDto.setSleep(true);
 
 	//  dao호출하고 그결과에 따라 출력한다.
-		UserDAOimpl userDAOimpl = new UserDAOimpl();
 		if(userDAOimpl.update(userDto)>0) {
 			System.out.println("******* 수정 ********");
 			System.out.println(userDto);
@@ -66,7 +65,6 @@ public class Test {
 	static void selectAll() {
 		
 	//  dao호출하고 그결과에 따라 출력한다.
-		UserDAOimpl userDAOimpl = new UserDAOimpl();
 		List<UserDto> list = userDAOimpl.selectAll();
 		System.out.println("******* 전체 조회 ********");
 		for(UserDto user : list) {
@@ -78,7 +76,6 @@ public class Test {
 		int userSeq = 666;
 		
 	//  dao호출하고 그결과에 따라 출력한다.
-		UserDAOimpl userDAOimpl = new UserDAOimpl();
 		UserDto user = userDAOimpl.selectOne(userSeq);
 		if(userDAOimpl.selectOne(userSeq) != null) {
 			System.out.println("******* " + userSeq + " 데이터 조회 ********");

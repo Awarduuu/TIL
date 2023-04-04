@@ -98,3 +98,9 @@ from employees
 group by department_id
 having department_id is not null)
 where department_id_salary_sum <= 50000;
+
+
+select u.user_seq, u.name, a.account_number, a.balance 
+	   from account a, users u 
+	   where a.user_seq = u.user_seq 
+	   and u.name like '%±æµ¿'

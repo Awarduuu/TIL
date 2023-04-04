@@ -110,7 +110,7 @@ public class UserDAOimpl implements UserDAO {
 			ps.setInt(1, userSeq);
 			rs = ps.executeQuery();
 			
-			while(rs.next()) {
+			if(rs.next()) {
 				user.setUserSeq(rs.getInt(1));
 				user.setName(rs.getString(2));
 				user.setEmail(rs.getString(3));
