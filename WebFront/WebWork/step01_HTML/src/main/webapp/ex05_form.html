@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> form 요소 test </h1>
+<!-- 
+	action = "submit될 때 이동할 서버주소"
+	method = "get or post" 전송 방식 (get은 url주소에 정보 노출, post는 request의 body영역에 숨겨져서 전송)
+				주로 get은 조회할 때, post는 DML할 때
+	name = "form 이름 설정" javaScript에서 form요소를 접근하기 위해서 필요
+ -->
+<form action = "" name = "" method = "get" novalidate="novalidate">
+	<label for = "name">이름 : </label>
+	<input type = "text" name = "name" id = "name">
+	<br>
+	<label for = "pwd">비밀번호 : </label>
+	<input type = "password" name = "pwd" placeholder = "비밀번호 입력" id = "pwd" required="required">
+	
+	
+	<fieldset>
+		<legend>취미</legend>
+		
+		<input type = "checkbox" name = "hobby" value = "등산"> 등산
+		<input type = "checkbox" name = "hobby" value = "수영"> 수영
+		<input type = "checkbox" name = "hobby" value = "낚시"> 낚시
+		<input type = "checkbox" name = "hobby" value = "놀기"> 놀기
+		<input type = "checkbox" name = "hobby" value = "먹기"> 먹기
+		<input type = "checkbox" name = "hobby" value = "잠자기"> 잠자기
+	</fieldset>
+	
+	<fieldset>
+		<legend>성별</legend>
+		<input type="radio" name="gender" value="1" checked="checked">남자
+		<input type="radio" name="gender" value="2" >여자
+	</fieldset>
+	
+	직업
+	<select name="job" size="3">
+		<option value="0">--선택--</option>
+		<option value="1">개발자</option>
+		<option value="2">디자이너</option>
+		<option value="3">기획자</option>
+		<option value="4">사무직</option>
+	</select> <br>
+	
+	<textarea rows="4" cols="20"></textarea> <br>
+	생일 : <input type="date" name="birth">
+	<input type="submit" value="전송하기">
+	<input type="reset" value="취소하기">
+	
+</form>
+</body>
+</html>

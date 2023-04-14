@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style>
+	table{width: 600px ; height:auto; border: 5px inset green}
+	th,td{text-align:center; border:1px solid gray}
+</style>
+ <script src="../js/jquery-3.6.1.min.js"></script>
+
+ <script type="text/javascript">
+  	$(function(){
+  		$("#send").click(function(){
+  			// 비동기화 통신 -> XMLHttPRequest 생성 -> open -> send -> response -> 갱신
+  			$.ajax({
+  				url : "ex01_serverPage.json", // 서버 주소(요청 주소)
+  				type : "post", // 요청 방식 (get | post | put | delete) 
+  				dataType : "json", // 서버가 응답할 때 전달하는 데이터 타입 (text | html | xml | json)
+  				//data : , // 서버에게 전달하는 parameter 정보
+  				success : function(data, status){
+  					// 응답결과를 받아서 화면을 갱신
+  					//alert("data = " + data);
+  					//alert("status = " + status);
+  					let str ="";
+  					$.each(data, function(index, item){
+  						//alert(index + " = " + item);
+  						str+="<tr>";
+  						str+=`<td>${item.name}</td>`;
+  						str+=`<td>${item.age}</td>`;
+  						str+=`<td>${item.addr}</td>`;
+  						str+="</tr>";
+  					});
+  					
+  					// 추가 전에 제거
+  					$("#table tr:gt(0)").remove();
+  					
+  					// table에 추가
+  					$("#table tr:eq(0)").after(str);
+  				}, // 응답결과가 성공했을 때 함수
+  				error : function(err, status){
+  					// 에러 발생...
+  					alert(err + "발생했습니다. status = " + status);
+  				}, // 응답결과가 실패했을 때 함수
+  			});
+  			
+  		});
+  	})
+ </script>
+
+</head>
+<body>
+	<a href="#" id="send">데이터가져오기</a><p/>
+	
+  <table id="table">
+  	  <tr>
+  	  	<th>이름</th>
+		<th>나이</th>
+		<th>주소</th>
+  	  </tr>
+  	  <!-- 결과 출력!! -->
+  </table>
+</body>
+</html>
+
+
+

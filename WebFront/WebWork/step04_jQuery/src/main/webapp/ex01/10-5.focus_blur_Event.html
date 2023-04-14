@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#result").css({
+			width: "200px",
+			height: "500px",
+			border: "3px solid black"
+		});
+		
+		$("[type=text]")
+		.focus(function() {
+			$(this).css({
+				backgroundColor: "pink",
+				color: "red",
+				fontSize: "20px"
+			});
+		})
+		.blur(function() {
+			$(this).css({
+				backgroundColor: "white",
+				color: "blue",
+				fontSize: "15px"
+			});
+			let name = this.value;
+			console.log(name);
+			
+			//div 영역에 text 누적
+			//text박스에 값 지우고 커서 놓기
+			//$("[name=name]")
+			//.val()
+			//.focus();
+			
+			// div영역에 cnrk
+			let data = $("#result").html() + name + "<br/>";
+			$("#result").html(data);
+			
+			$(this).val("");
+			$(this).focus();
+		});
+		
+	});
+</script>
+</head>
+<body>
+<h1>focus 와 blur 이벤트</h1>
+
+<form>
+   이름 : <input type="text" name="name">	
+ </form>	
+ 
+ <p>
+ <div id="result"></div>
+
+</body>
+</html>
+
+
+
+
+
+

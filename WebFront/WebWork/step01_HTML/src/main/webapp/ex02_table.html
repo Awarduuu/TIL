@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<style type="text/css">
+	table {
+		border : 1px red solid;
+		width : 300px;
+		height : 200px;
+	}
+	
+	th, td {
+		border : 1px gray solid;
+	}
+</style>
+
+</head>
+<body>
+<h1> table 만들기 </h1>
+
+<table>
+	<caption>제목입니다</caption>
+	<thead>
+	<tr>
+		<th>이름</th>
+		<th>나이</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr>
+		<td>장희정</td>
+		<td>10</td>
+	</tr><tr>
+		<td>이나영</td>
+		<td>20</td>
+	</tr>
+	</tbody>
+	
+	
+</table>
+
+<h2>행병합</h2>
+<table>
+	<tr>
+	<td colspan = "2">A</td>
+	</tr>
+	<tr>
+	<td>B</td>
+	<td>C</td>
+	</tr>
+</table>
+<table>
+	<thead>
+	<tr>
+		<td colspan="3">A</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td rowspan = "3">b</td>
+		<td rowspan = "2">c</td>
+		<td>d</td>
+	</tr>
+	<tr>
+		<td>e</td>
+	</tr>
+		
+	<tr>
+		<td>f</td>
+		<td>g</td>
+	</tr>
+		
+	<tr>
+		<td colspan="3">h</td>
+	</tr>
+	<tr>
+		<td rowspan="3">i</td>
+		<td colspan="2">j</td>
+	</tr>
+	<tr>
+		<td>k</td>
+		<td>l</td>
+	</tr>
+	<tr>
+		<td>m</td>
+		<td>o</td>
+	</tr>
+	</tbody>
+	
+</table>
+</body>
+</html>

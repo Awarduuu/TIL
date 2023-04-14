@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//h3태그를 클릭했을 때 호출 될 함수를 만들자
+	function test(){
+		alert("클릭했어요~");
+	}
+
+</script>
+
+<script type="text/javascript" src="js/basic.js"></script>
+
+<script type="text/javascript">
+	alert("나는 출력되어요~");
+	
+	window.onload = function(){
+		// 문서 (body) 로딩이 완료되면!
+		document.querySelector("#btn").onclick = btn1Check;	
+		
+		// 마우스 오버 했을 때
+		let btnList = document.querySelectorAll("button");
+		btnList.forEach(function(btn, index){
+			console.log(btn + " , " + index);
+			btn.onmouseover = btnFun;
+		});
+	}
+	
+</script>
+</head>
+<body>
+
+<h2 onmouseover="">java Script 시작하기</h2>
+
+<h3 onclick = "test()" > 클릭해봐! </h3>
+
+<button id="btn" >클릭 1</button> <p>
+<button>클릭 2</button> <p>
+<button>클릭 3</button> <p>
+
+<script type="text/javascript">
+	
+	document.querySelector("h2").onmouseover = function(){
+		this.style.border = "double 5px blue";
+	}
+	
+	document.querySelector("h2").addEventListener("mouseout", function(){
+		this.style.border = "none";
+	});
+	
+
+</script>
+
+</body>
+</html>
