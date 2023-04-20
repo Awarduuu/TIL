@@ -30,5 +30,11 @@ truncate table users;
 --	password varchar2(20) not null 추가
 alter table users add password varchar2(20) not null;
 --	login test user 1건 등록 
-insert into users values( 1, '홍길동', 'hong@gildong.com', '010-1111-1111', 'N', '1234');
+insert into users values( , '홍길동', 'hong@gildong.com', '010-1111-1111', 'N', '1234');
 commit;
+
+create sequence user_seq;
+
+drop sequence user_seq;
+
+select * from users;

@@ -22,7 +22,7 @@ public class LoginDAOImpl implements LoginDAO {
 			ps.setString(1, email);
 			rs = ps.executeQuery();
 			
-			while(rs.next()) {
+			if(rs.next()) {
 				boolean isSleep = true;
 				if(rs.getString(5).equals("N")) {
 					isSleep = false;

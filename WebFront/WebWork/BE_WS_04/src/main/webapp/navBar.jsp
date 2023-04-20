@@ -16,19 +16,23 @@
 <body>
 
 <nav id="navbar">
-    <!-- 5개의 메뉴생성 -->
       <ul>
+      
+      	<c:if test="${user!=null}">
+      		<li class="nav-item">${sessionScope.user.name}</li>
+      	</c:if>
+      	
         <li class="nav-item logo"><img src="images/logo.jpg" alt="로고입니다." ></li>
-        <li class="nav-item"> <a href="personal.html">개인</a></li>
+        <li class="nav-item"> <a href="personal/personal.jsp">개인</a></li>
         <li class="nav-item"><a href="busines.html">기업</a></li>
         
         <c:choose>
-        	<c:when test="${empty email}">
+        	<c:when test="${empty user}">
         		<li class="nav-item"><a href="login.jsp">로그인</a></li>
        			<li class="nav-item"><a href="register.jsp">회원가입</a></li>
         	</c:when>
         	<c:otherwise>
-        		<li class="nav-item"><a id="Logout" onclick="logout">로그아웃</a></li>
+        		<li class="nav-item"><a href="#" onclick="logout('${pageContext.request.contextPath}')">로그아웃</a></li>
         	</c:otherwise>
         </c:choose>
         

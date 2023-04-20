@@ -42,41 +42,11 @@
     
   </style>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  
+  <script type="text/javascript" src="${pageContext.request.contextPath}/js/common.js"></script>
   <script type="text/javascript">
     $(function(){
     	
-    	let bannerList = [];
-    	let bannerIndex = 0;
-    	   
-    	 //ajax 요청한다.//////////////////////////////////////////////////////////
-    	 $.ajax({
-		    	url : "${pageContext.request.contextPath}/banners", // 서버주소(요청주소)
-		    	type: "get" , //요청방식 (get | post | put | delete )
-		    	dataType : "json",  //서버가 응답할때 전달하는 데이터 타입 (text | html | xml | json)
-		    	//data : , //서버에게 전달하는 parameter정보 
-		    	success : function(result){//응답결과가 성공했을때 함수
-		    	
-    			 	let bannerEle =  $("#banner");
-    			 	bannerList = result;
-		        	// 주기적으로 banner 변경
-		         	setInterval(function(){
-		         		bannerEle.html (bannerList[bannerIndex++]);
-		         		if(bannerIndex==bannerList.length ){
-		         			bannerIndex=0;
-		         		}
-		         	} , 2000);
-
-		    	}, 
-		    	error : function(err, status){//응답결과가 실패했을때 함수 
-		    		// 에러발생....
-		    		alert(err +"발생했습니다. status = " + status);
-		    	} 
-		    });
-    	 //////////////////////////////////////////////////////////////////////
-    	
-    
-      ////////////////////////////////////////
+      getBanner("${pageContext.request.contextPath}");
       $(".main-item-btn").click(function(){
     	   let id = $(this).closest(".main-item").attr('data-main-item-id');
  			alert(id)
