@@ -21,4 +21,10 @@ public class UserServiceImpl implements UserService{
 		return userDao.register(userDto);
 	}
 
+	@Override
+	public int changePassword(int userSeq, String password, String passwordNew) {
+		if(userDao.confirmPassword(userSeq, password)) return userDao.changePassword(userSeq, passwordNew);
+		return 0;
+	}
+
 }

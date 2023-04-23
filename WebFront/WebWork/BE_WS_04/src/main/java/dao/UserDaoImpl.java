@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import common.DBManager;
 import dto.UserDto;
@@ -40,6 +41,54 @@ public class UserDaoImpl implements UserDao{
 		}
 		
 		return ret;
+	}
+
+	@Override
+	public boolean confirmPassword(int userSeq, String password) {
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "select password from users where user_seq = ?";
+		boolean result = false;
+		try {
+			con = DBManager.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, userSeq);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				if(rs.getString(1).equals(password)) {
+					result = true;
+				}
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public int changePassword(int userSeq, String password) {
+		String sql = "update users set password = ? where user_seq = ?";
+		Connection con = null;
+		PreparedStatement ps = null;
+		int result = 0;
+		try {
+			con = DBManager.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, password);
+			ps.setInt(2, userSeq);
+			
+			result = ps.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.releaseConnection(con, ps);
+		}
+		
+		return result;
 	}
 
 }

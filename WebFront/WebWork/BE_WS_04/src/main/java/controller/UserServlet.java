@@ -1,12 +1,17 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import dao.UserDaoImpl;
 import dto.UserDto;
@@ -25,6 +30,7 @@ public class UserServlet extends HttpServlet {
 		
 		switch(job) {
 			case "register" : register(request, response); break;
+			case "changePassword" : changePassword(request, response); break;
 			
 		}
 	}
@@ -43,8 +49,29 @@ public class UserServlet extends HttpServlet {
 		int result = service.register(user);
 		
 		response.getWriter().print(result);
+	}
+	
+	public void changePassword(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
 		
+		UserDto user = (UserDto) session.getAttribute("user");
 		
+		String password = request.getParameter("password");
+		String passwordNew = request.getParameter("passwordNew");
+		String passwordNew2 = request.getParameter("passwordNew2");
+		
+		UserService service = UserServiceImpl.getInstance();
+		int result = service.changePassword(user.getUserSeq(), password, passwordNew);
+		
+		Gson gson = new Gson();
+		JsonObject obj = new JsonObject();
+		if(result >0) obj.addProperty("result", "success");
+		else obj.addProperty("result", "fail");
+		String jsonArr = gson.toJson(obj);
+		System.out.println(jsonArr);
+		
+		PrintWriter out = response.getWriter();
+		out.print(jsonArr);
 		
 	}
 
