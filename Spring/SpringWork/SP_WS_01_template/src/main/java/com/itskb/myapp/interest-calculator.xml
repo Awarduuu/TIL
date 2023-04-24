@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.itskb.myapp.calculator.LoanInterestCalculator" id="loanCal"></bean>
+	<bean class="com.itskb.myapp.calculator.SavingInterestCalculator" id="savingCal"></bean>
+	
+	<bean class="com.itskb.myapp.calculator.InterestCalculatorService" id="interestCalculatorService" p:savingCalcator-ref="savingCal">
+		<constructor-arg ref="loanCal"></constructor-arg>
+	</bean>
+
+</beans>

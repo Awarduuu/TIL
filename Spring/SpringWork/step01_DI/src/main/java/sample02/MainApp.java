@@ -1,0 +1,23 @@
+package sample02;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainApp {
+	
+	public static void main(String[] args) {
+		//기존 방식 
+//		Member member = new Member("jang", "124", 24, "seoul");
+//		MemberDAO dao = new MemberDAO();
+//		MemberService service = new MemberService(dao, member);
+//		service.serviceInsert();
+		
+		ApplicationContext context =
+				new ClassPathXmlApplicationContext("sample02/springDI.xml");
+		
+		System.out.println("----------------------------");
+		
+		MemberService service = context.getBean("service", MemberService.class);
+		service.serviceInsert();
+	}
+}
