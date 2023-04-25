@@ -12,6 +12,8 @@
 		<config>src/main/java/sample03/springDI.xml</config>
 		<config>src/main/java/sample04/springDISetter.xml</config>
 		<config>src/main/java/sample05/springDI.xml</config>
+		<config>src/main/java/sample06/springDIAnnotation.xml</config>
+		<config>src/main/java/sample07/springDIAnnotation.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
