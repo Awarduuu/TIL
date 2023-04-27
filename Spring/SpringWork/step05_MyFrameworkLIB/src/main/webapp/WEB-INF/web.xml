@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>step07_MyFramework</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 진입점 Controller(Servlet) 등록
+  		: DispatcherServlet 등록해서 생성하면 생성하는 순간 spring bean 설정문서(xml)를 로딩하고 
+  		그 설정을 바탕으로 생성과 주입을 한다(WebApplicationContext)
+  		설정문서의 기본 위치와 이름은 /WEB_INF/서블릿이름-servlet.xml
+  		
+  		만약 이름과 위치를 변경하고 싶다면 <init-param>을 설정한다.
+   -->
+  <servlet>
+    <servlet-name>dispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!-- <init-param>
+    	<param-name>contextConfigLocation</param-name>
+    	<param-value></param-value>
+    </init-param> -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  
+  <servlet-mapping>
+    <servlet-name>dispatcher</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
