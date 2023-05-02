@@ -1,0 +1,68 @@
+2023-04-28 15:41:02,137 DEBUG (LogFactory.java:105) - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2023-04-28 15:41:02,187 DEBUG (JdbcTransaction.java:137) - Opening JDBC Connection
+2023-04-28 15:41:03,116 DEBUG (JdbcTransaction.java:101) - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@302f7971]
+2023-04-28 15:41:03,130 DEBUG (BaseJdbcLogger.java:137) - ==>  Preparing: select ename from emp
+2023-04-28 15:41:03,253 DEBUG (BaseJdbcLogger.java:137) - ==> Parameters: 
+2023-04-28 15:41:03,371 DEBUG (BaseJdbcLogger.java:137) - <==      Total: 14
+2023-04-28 15:41:03,372 DEBUG (JdbcTransaction.java:123) - Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@302f7971]
+2023-04-28 15:41:03,373 DEBUG (JdbcTransaction.java:91) - Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@302f7971]
+2023-04-28 16:28:04,628 DEBUG (LogFactory.java:105) - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2023-04-28 16:28:04,682 DEBUG (JdbcTransaction.java:137) - Opening JDBC Connection
+2023-04-28 16:28:05,568 DEBUG (JdbcTransaction.java:101) - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@4278284b]
+2023-04-28 16:28:05,582 DEBUG (BaseJdbcLogger.java:137) - ==>  Preparing: insert into emp(empno, ename, job, sal, hiredate) values (?, ?, ?, ?, sysdate)
+2023-04-28 16:28:05,699 DEBUG (BaseJdbcLogger.java:137) - ==> Parameters: 9899(Integer), 장희정(String), 강사2(String), 2500(Integer)
+2023-04-28 16:28:05,744 DEBUG (BaseJdbcLogger.java:137) - <==    Updates: 1
+2023-04-28 16:28:05,744 DEBUG (JdbcTransaction.java:70) - Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@4278284b]
+2023-04-28 16:28:05,750 DEBUG (JdbcTransaction.java:123) - Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@4278284b]
+2023-04-28 16:28:05,751 DEBUG (JdbcTransaction.java:91) - Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4278284b]
+2023-04-28 16:31:57,384 DEBUG (LogFactory.java:105) - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2023-04-28 16:31:57,436 DEBUG (JdbcTransaction.java:137) - Opening JDBC Connection
+2023-04-28 16:31:58,259 DEBUG (JdbcTransaction.java:101) - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@4278284b]
+2023-04-28 16:31:58,273 DEBUG (BaseJdbcLogger.java:137) - ==>  Preparing: delete from emp where empno = ?
+2023-04-28 16:31:58,382 DEBUG (BaseJdbcLogger.java:137) - ==> Parameters: 2500(Integer)
+2023-04-28 16:31:58,413 DEBUG (BaseJdbcLogger.java:137) - <==    Updates: 0
+2023-04-28 16:31:58,414 DEBUG (JdbcTransaction.java:80) - Rolling back JDBC Connection [oracle.jdbc.driver.T4CConnection@4278284b]
+2023-04-28 16:31:58,419 DEBUG (JdbcTransaction.java:123) - Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@4278284b]
+2023-04-28 16:31:58,420 DEBUG (JdbcTransaction.java:91) - Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4278284b]
+2023-04-28 16:32:12,516 DEBUG (LogFactory.java:105) - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2023-04-28 16:32:12,567 DEBUG (JdbcTransaction.java:137) - Opening JDBC Connection
+2023-04-28 16:32:13,188 DEBUG (JdbcTransaction.java:101) - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@4278284b]
+2023-04-28 16:32:13,203 DEBUG (BaseJdbcLogger.java:137) - ==>  Preparing: delete from emp where empno = ?
+2023-04-28 16:32:13,314 DEBUG (BaseJdbcLogger.java:137) - ==> Parameters: 9899(Integer)
+2023-04-28 16:32:13,331 DEBUG (BaseJdbcLogger.java:137) - <==    Updates: 1
+2023-04-28 16:32:13,331 DEBUG (JdbcTransaction.java:70) - Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@4278284b]
+2023-04-28 16:32:13,338 DEBUG (JdbcTransaction.java:123) - Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@4278284b]
+2023-04-28 16:32:13,339 DEBUG (JdbcTransaction.java:91) - Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@4278284b]
+2023-04-28 16:42:19,351 DEBUG (LogFactory.java:105) - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2023-04-28 16:42:19,381 DEBUG (JdbcTransaction.java:137) - Opening JDBC Connection
+2023-04-28 16:42:20,276 DEBUG (JdbcTransaction.java:101) - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@282cb7c7]
+2023-04-28 16:42:20,289 DEBUG (BaseJdbcLogger.java:137) - ==>  Preparing: insert into emp(empno, ename, job, sal, hiredate) values (?, ?, ?, ?, sysdate)
+2023-04-28 16:42:20,403 DEBUG (BaseJdbcLogger.java:137) - ==> Parameters: 7878(Integer), null, 강사2(String), 2500(Integer)
+2023-04-28 16:42:20,434 DEBUG (BaseJdbcLogger.java:137) - <==    Updates: 1
+2023-04-28 16:42:20,435 DEBUG (JdbcTransaction.java:70) - Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@282cb7c7]
+2023-04-28 16:42:20,446 DEBUG (JdbcTransaction.java:123) - Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@282cb7c7]
+2023-04-28 16:42:20,447 DEBUG (JdbcTransaction.java:91) - Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@282cb7c7]
+2023-04-28 17:03:05,382 DEBUG (LogFactory.java:105) - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2023-04-28 17:03:05,433 DEBUG (JdbcTransaction.java:137) - Opening JDBC Connection
+2023-04-28 17:03:06,349 DEBUG (JdbcTransaction.java:101) - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@42530531]
+2023-04-28 17:03:06,362 DEBUG (BaseJdbcLogger.java:137) - ==>  Preparing: select empno, ename, job, sal, hiredate from emp order by empno
+2023-04-28 17:03:06,473 DEBUG (BaseJdbcLogger.java:137) - ==> Parameters: 
+2023-04-28 17:03:06,613 DEBUG (BaseJdbcLogger.java:137) - <==      Total: 15
+2023-04-28 17:03:06,615 DEBUG (JdbcTransaction.java:123) - Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@42530531]
+2023-04-28 17:03:06,615 DEBUG (JdbcTransaction.java:91) - Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@42530531]
+2023-04-28 17:03:49,386 DEBUG (LogFactory.java:105) - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2023-04-28 17:03:49,434 DEBUG (JdbcTransaction.java:137) - Opening JDBC Connection
+2023-04-28 17:03:50,028 DEBUG (JdbcTransaction.java:101) - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@42530531]
+2023-04-28 17:03:50,044 DEBUG (BaseJdbcLogger.java:137) - ==>  Preparing: select empno, ename as empName, job, sal, hiredate from emp order by empno
+2023-04-28 17:03:50,165 DEBUG (BaseJdbcLogger.java:137) - ==> Parameters: 
+2023-04-28 17:03:50,340 DEBUG (BaseJdbcLogger.java:137) - <==      Total: 15
+2023-04-28 17:03:50,348 DEBUG (JdbcTransaction.java:123) - Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@42530531]
+2023-04-28 17:03:50,349 DEBUG (JdbcTransaction.java:91) - Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@42530531]
+2023-04-28 17:06:25,183 DEBUG (LogFactory.java:105) - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2023-04-28 17:06:25,240 DEBUG (JdbcTransaction.java:137) - Opening JDBC Connection
+2023-04-28 17:06:26,063 DEBUG (JdbcTransaction.java:101) - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@42530531]
+2023-04-28 17:06:26,075 DEBUG (BaseJdbcLogger.java:137) - ==>  Preparing: select empno, ename as empName, job, sal, hiredate from emp order by empno
+2023-04-28 17:06:26,184 DEBUG (BaseJdbcLogger.java:137) - ==> Parameters: 
+2023-04-28 17:06:26,310 DEBUG (BaseJdbcLogger.java:137) - <==      Total: 15
+2023-04-28 17:06:26,312 DEBUG (JdbcTransaction.java:123) - Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@42530531]
+2023-04-28 17:06:26,313 DEBUG (JdbcTransaction.java:91) - Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@42530531]
