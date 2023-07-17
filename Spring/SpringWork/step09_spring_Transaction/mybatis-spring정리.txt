@@ -1,0 +1,32 @@
+-mybatis lib
+SqlSessionFactoryBuilder
+SqlSessionFactory
+SqlSession
+
+-mybatis-spring lib  ===> 사용하면 DbManager.java문서의 역할 필요없다!!
+ SqlSessionFactoryBean
+   : SqlSessionFactoryBuilder를 직접 생성해서 
+     mybatis설정문서를 로딩하여 SqlSessionFactory를  생성해준다.
+
+ SqlSessionTemplate
+   : SqlSession을 implements한 구현객체로
+    sql의 CRUD 와 commit, rollback에 관련되 메소드를 제공한다. 
+    
+   
+  * mybatis + mybatis-spring 사용
+    1) oracle driver lib
+    2) mybatis lib
+    3) mybatis-spring lib
+    4) spring-jdbc lib
+    5) commons-dbcp lib
+    
+    6) log4 lib ->spring web MVC에 기본 추가되어 있다.
+          : src/main/resources/log4j.xml문서를 지우고
+            우리가 가지고 있는 log4j.properties파일은 넣어서 사용한다.
+    
+    
+    
+    
+    
+    
+    

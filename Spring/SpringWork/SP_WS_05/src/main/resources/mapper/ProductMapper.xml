@@ -3,6 +3,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="productMapper">
 
+<sql id="productSelectSql">
+	select code, name, qty, price, detail
+	from productList
+</sql>
+
 <!-- 1. 레코드 삽입   -->
 <insert id="insert" parameterType="productDTO">
 	insert into productList(code, name, qty, price, detail)
@@ -11,20 +16,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 2. 전체레코드 검색  -->
 <select id="selectAll" resultType="productDTO"> 
-	select * from productList
+	<include refid="productSelectSql"/>
 </select>
 
 <!-- 3. 검색필드 , 검색단어에 해당하는 레코드 검색  -->
 <select id="selectByField" parameterType="map" resultType="productDTO">
-	select * 
-	from productList
+	<include refid="productSelectSql"/>
 	where ${field} like #{word}
 </select>
 
 <!-- 4. 전달된 컬럼을 기반으로 정렬하기  -->
 <select id="selectByOrder" parameterType="string" resultType="productDTO">
-	select *
-	from productList
+	<include refid="productSelectSql"/>
 	order by ${_parameter}
 </select>
 

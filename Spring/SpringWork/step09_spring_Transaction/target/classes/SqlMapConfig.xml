@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+  
+  <settings>
+  
+    <!-- #{이름}을 했을때는 값이 없으면 오류가 발생한다. 그래서 만약 값이 없으면
+          NULL이라는 값으로 전달 될수 있도록 설정이 필요하다.
+     --> 
+     <setting name="jdbcTypeForNull" value="NULL"/>
+    
+    <!--  자바의camel표기법가 Db의 underscore를 매핑해주는 설정 -->
+     <setting name="mapUnderscoreToCamelCase" value="true"/>
+  </settings>
+  
+  
+</configuration>
+
+
+
+
+
+
+

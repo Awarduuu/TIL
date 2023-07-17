@@ -22,7 +22,7 @@ public class ProductMainView {
 	     *        
 	   * */
 	   System.out.println("********** [2] 모든 게시물 검색 ******************");
-//	   dao.selectAll();
+	   dao.selectAll();
 
       /**
 	   * [3]. 검색필드 , 검색단어에 해당하는 레코드 검색
@@ -65,7 +65,7 @@ public class ProductMainView {
 		  select sum(p_qty) from product -- 모든상품의 qty의총합계
 	  * */
 	  System.out.println("********** [7] 등록된 총 상품 개수 ******************");
-	  dao.selectSumQty();
+//	  dao.selectSumQty();
 
 
 	
